@@ -25,9 +25,4 @@ public class FileConverter {
         return parseTo;
     }
 
-    public String convert() {
-        Parser fromParser = getParseFrom();
-        Parser toParser = getParseTo();
-        return toParser.convertTo(fromParser.convertFrom("filePath"));
-    }
 }
