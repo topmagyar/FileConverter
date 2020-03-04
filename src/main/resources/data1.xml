@@ -15,4 +15,9 @@
         <BrandName>Alpha Romeo Brera</BrandName>
         <Price>37000</Price>
     </Car>
+    <Car>
+        <Date>21.07.2010</Date>
+        <BrandName>Opel</BrandName>
+        <Price>12000</Price>
+    </Car>
 </Document>

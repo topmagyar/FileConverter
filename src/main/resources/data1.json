@@ -1,0 +1,30 @@
+[
+  {
+    "car": {
+      "date": "10.10.2018",
+      "brandName": "Alpha Romeo Brera",
+      "price": "37000"
+    }
+  },
+  {
+    "car": {
+      "date": "10.10.2018",
+      "brandName": "Alpha Romeo Brerqweqwea",
+      "price": "37000"
+    }
+  },
+  {
+    "car": {
+      "date": "10.10.2018",
+      "brandName": "Alpha Romeo Brera",
+      "price": "37000"
+    }
+  },
+  {
+    "car": {
+      "date": "21.07.2010",
+      "brandName": "Opel",
+      "price": "12000"
+    }
+  }
+]

@@ -6,6 +6,10 @@ public class Car {
     String brandName;
     String price;
 
+    public Car() {
+
+    }
+
     public Car(String date, String brandName, String price) {
         this.date = date;
         this.brandName = brandName;
