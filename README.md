@@ -1,4 +1,4 @@
-FileConverter library was developed for converting special object "Car" between different file types. Also user can change files content through the library.
+FileConverter library was developed for converting special object "Car" between different file types. Also user can change files content using this library.
 
 Library contains main FileReader interface and FileReaderImpl class as the implementation.
 Supported parsers localed into "parsers" folder. 
@@ -20,3 +20,10 @@ FileReader interface contains next opened methods for user:
 - removeLastEntity(): remove last Car entity from data file;
 - removeEntity(int itemIndex): remove Car entity by item number from data file;
 - uploadData(List<Car> cars): upload data for file;  
+
+Future development:
+- supporting different types(not just Car object);
+- supporting more types of files;
+- multithreading(working with several files);
+- 100% of code coverage;
+- custom exceptions for different cases;
