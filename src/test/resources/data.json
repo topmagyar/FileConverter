@@ -1,23 +1,23 @@
 [
   {
     "car": {
-      "date": "10.10.2018",
+      "date": "10.10.2014",
       "brandName": "Alpha Romeo Brera",
       "price": "37000"
     }
   },
   {
     "car": {
-      "date": "10.10.2018",
-      "brandName": "Alpha Romeo Brerqweqwea",
-      "price": "37000"
+      "date": "10.10.2009",
+      "brandName": "Mercedes",
+      "price": "9000"
     }
   },
   {
     "car": {
       "date": "10.10.2018",
-      "brandName": "Alpha Romeo Brera",
-      "price": "37000"
+      "brandName": "BMW M4",
+      "price": "100000"
     }
   },
   {

@@ -2,6 +2,7 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.parsers.base.ParserType;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -67,5 +68,10 @@ public class XmlParser implements Parser {
         DOMSource domSource = new DOMSource(document);
         StreamResult streamResult = new StreamResult(new File(filePath));
         transformer.transform(domSource, streamResult);
+    }
+
+    @Override
+    public String getParserId() {
+        return ParserType.XML.name();
     }
 }

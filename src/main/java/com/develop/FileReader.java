@@ -1,61 +1,33 @@
 package com.develop;
 
-import com.develop.converter.FileConverter;
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class FileReader {
+public interface FileReader {
 
-    private String filePath;
-    private List<Car> cars = new ArrayList<Car>();
-    private FileConverter converter = new FileConverter();
+    FileReader addParser(Parser parser);
 
-    public FileReader() {
-    }
+    FileReader readFrom(String filePath, String parserType) throws Exception;
 
-    public FileReader addEntity(String date, String brandName, String price) {
-        Car car = new Car(date, brandName, price);
-        cars.add(car);
-        return this;
-    }
+    FileReader readFrom(String filePath, Parser parserFrom) throws Exception;
 
-    public FileReader readFrom(String filePath, String parserType) {
-        return this;
-    }
+    FileReader save() throws Exception;
 
-    public FileReader readFrom(String filePath, Parser parserFrom) throws Exception {
-        cars = parserFrom.convertFrom(filePath);
-        return this;
-    }
+    void saveTo(String filePath, String parserType) throws Exception;
 
-    public void editFile() {
+    void saveTo(String filePath, Parser parserTo) throws Exception;
 
-    }
+    FileReader addEntity(String date, String brandName, String price);
 
-//    public List<Car> readEntities() {
-//    }
+    List<Car> getFileData();
 
-    public FileReader save() {
-        return this;
-    }
+    FileReader removeFirstEntity();
 
-    public void saveTo(String filePath, String parserType) {
+    FileReader removeLastEntity();
 
-    }
+    FileReader removeEntity(int itemIndex);
 
-    public void saveTo(String filePath, Parser parserTo) throws Exception {
-        parserTo.convertTo(filePath, cars);
-    }
-
-    public FileReader setFilePath(String filePath) {
-        this.filePath = filePath;
-        return this;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
+    FileReader uploadData(List<Car> cars);
 }

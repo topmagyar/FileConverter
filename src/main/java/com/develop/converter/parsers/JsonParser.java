@@ -2,6 +2,7 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.parsers.base.ParserType;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,7 +20,7 @@ public class JsonParser implements Parser {
     public List<Car> convertFrom(String filePath) {
         List<Car> cars = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("employees.json"))
+        try (FileReader reader = new FileReader(filePath))
         {
             Object obj = jsonParser.parse(reader);
             JSONArray employeeList = (JSONArray) obj;
@@ -59,6 +60,11 @@ public class JsonParser implements Parser {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String getParserId() {
+        return ParserType.JSON.name();
     }
 
     private Car parseCarObject(JSONObject car) {
