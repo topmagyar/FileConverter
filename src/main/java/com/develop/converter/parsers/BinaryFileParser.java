@@ -2,7 +2,6 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
-import com.develop.converter.parsers.base.ParserType;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -2,7 +2,6 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
-import com.develop.converter.parsers.base.ParserType;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -41,7 +40,7 @@ public class JsonParser implements Parser {
     }
 
     @Override
-    public void convertTo(String filePath, List<Car> cars) throws Exception {
+    public void convertTo(String filePath, List<Car> cars) {
         JSONArray carJsonList = new JSONArray();
         for (Car car : cars) {
             JSONObject carJsonDetails = new JSONObject();

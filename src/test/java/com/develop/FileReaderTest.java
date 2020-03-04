@@ -5,7 +5,6 @@ import com.develop.converter.parsers.JsonParser;
 import com.develop.converter.parsers.XmlParser;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
@@ -23,7 +22,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new BinaryFileParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new BinaryFileParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
@@ -36,7 +35,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new JsonParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new JsonParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
@@ -49,7 +48,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new XmlParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new XmlParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
@@ -62,7 +61,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new XmlParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new XmlParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
@@ -75,7 +74,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new JsonParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new JsonParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
@@ -88,7 +87,7 @@ public class FileReaderTest {
         fileReader.saveTo(binaryResource.getPath(), new BinaryFileParser());
         assertEquals(4, fileReader.getFileData().size());
         fileReader.readFrom(binaryResource.getPath(), new BinaryFileParser());
-        fileReader.addEntity("123","rqwr","123");
+        fileReader.addEntity("01.02.2020","Nissan","12312");
         assertEquals(5, fileReader.getFileData().size());
     }
 
