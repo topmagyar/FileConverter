@@ -5,9 +5,12 @@ import com.develop.converter.parsers.BinaryFileParser;
 import com.develop.converter.parsers.JsonParser;
 import com.develop.converter.parsers.XmlParser;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.utils.Utils;
 
 import java.io.File;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class FileReaderImpl implements FileReader {
@@ -28,7 +31,13 @@ public class FileReaderImpl implements FileReader {
         return this;
     }
 
-    public FileReaderImpl addEntity(String date, String brandName, String price) {
+    public FileReaderImpl addEntity(String date, String brandName, Integer price) throws ParseException {
+        Car car = new Car(Utils.convertStringToDate(date), brandName, price);
+        cars.add(car);
+        return this;
+    }
+
+    public FileReaderImpl addEntity(Date date, String brandName, Integer price) {
         Car car = new Car(date, brandName, price);
         cars.add(car);
         return this;

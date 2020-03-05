@@ -2,6 +2,7 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.utils.Utils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -35,7 +36,7 @@ public class XmlParser implements Parser {
                 String date = element.getElementsByTagName("Date").item(0).getTextContent();
                 String brandName = element.getElementsByTagName("BrandName").item(0).getTextContent();
                 String price = element.getElementsByTagName("Price").item(0).getTextContent();
-                list.add(new Car(date, brandName, price));
+                list.add(new Car(Utils.convertStringToDate(date), brandName, Integer.valueOf(price)));
             }
         }
         return list;
@@ -53,13 +54,13 @@ public class XmlParser implements Parser {
             Element carElement = document.createElement("Car");
             root.appendChild(carElement);
             Element dateElement = document.createElement("Date");
-            dateElement.appendChild(document.createTextNode(car.getDate()));
+            dateElement.appendChild(document.createTextNode(Utils.convertDateToString(car.getDate())));
             carElement.appendChild(dateElement);
             Element brandNameElement = document.createElement("BrandName");
             brandNameElement.appendChild(document.createTextNode(car.getBrandName()));
             carElement.appendChild(brandNameElement);
             Element priceElement = document.createElement("Price");
-            priceElement.appendChild(document.createTextNode(car.getPrice()));
+            priceElement.appendChild(document.createTextNode(String.valueOf(car.getPrice())));
             carElement.appendChild(priceElement);
         }
         TransformerFactory transformerFactory = TransformerFactory.newInstance();

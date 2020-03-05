@@ -1,16 +1,17 @@
 package com.develop.converter.entity;
 
+import java.util.Date;
+
 public class Car {
 
-    String date;
+    Date date;
     String brandName;
-    String price;
+    Integer price;
 
     public Car() {
-
     }
 
-    public Car(String date, String brandName, String price) {
+    public Car(Date date, String brandName, Integer price) {
         this.date = date;
         this.brandName = brandName;
         this.price = price;
@@ -24,19 +25,19 @@ public class Car {
         return brandName;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 }

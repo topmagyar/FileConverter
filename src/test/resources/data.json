@@ -3,28 +3,28 @@
     "car": {
       "date": "10.10.2014",
       "brandName": "Alpha Romeo Brera",
-      "price": "37000"
+      "price": 3000
     }
   },
   {
     "car": {
       "date": "10.10.2009",
       "brandName": "Mercedes",
-      "price": "9000"
+      "price": 9000
     }
   },
   {
     "car": {
       "date": "10.10.2018",
       "brandName": "BMW M4",
-      "price": "100000"
+      "price": 100000
     }
   },
   {
     "car": {
       "date": "21.07.2010",
       "brandName": "Opel",
-      "price": "12000"
+      "price": 12000
     }
   }
 ]

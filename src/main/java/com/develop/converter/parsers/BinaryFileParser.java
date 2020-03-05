@@ -2,6 +2,7 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.utils.Utils;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ public class BinaryFileParser implements Parser {
                 while (size > 0) {
                     String date = dataInputStream.readUTF();
                     String brandName = dataInputStream.readUTF();
-                    String price = dataInputStream.readUTF();
-                    cars.add(new Car(date, brandName, price));
+                    int price = dataInputStream.readInt();
+                    cars.add(new Car(Utils.convertStringToDate(date), brandName, price));
                     size--;
                 }
             }
@@ -50,9 +51,9 @@ public class BinaryFileParser implements Parser {
     }
 
     private void write(Car car) throws IOException {
-        dataOutputStream.writeUTF(car.getDate());
+        dataOutputStream.writeUTF(Utils.convertDateToString(car.getDate()));
         dataOutputStream.writeUTF(car.getBrandName());
-        dataOutputStream.writeUTF(car.getPrice());
+        dataOutputStream.writeInt(car.getPrice());
     }
 
     private void save() throws IOException {

@@ -2,6 +2,7 @@ package com.develop.converter.parsers;
 
 import com.develop.converter.entity.Car;
 import com.develop.converter.parsers.base.Parser;
+import com.develop.converter.utils.Utils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,7 +25,12 @@ public class JsonParser implements Parser {
             Object obj = jsonParser.parse(reader);
             JSONArray employeeList = (JSONArray) obj;
             employeeList.forEach( car -> {
-                Car carObject = parseCarObject( (JSONObject) car );
+                Car carObject = null;
+                try {
+                    carObject = parseCarObject( (JSONObject) car );
+                } catch (java.text.ParseException e) {
+                    e.printStackTrace();
+                }
                 cars.add(carObject);
             } );
 
@@ -44,7 +50,7 @@ public class JsonParser implements Parser {
         JSONArray carJsonList = new JSONArray();
         for (Car car : cars) {
             JSONObject carJsonDetails = new JSONObject();
-            carJsonDetails.put("date", car.getDate());
+            carJsonDetails.put("date", Utils.convertDateToString(car.getDate()));
             carJsonDetails.put("brandName", car.getBrandName());
             carJsonDetails.put("price", car.getPrice());
 
@@ -66,12 +72,12 @@ public class JsonParser implements Parser {
         return ParserType.JSON.name();
     }
 
-    private Car parseCarObject(JSONObject car) {
+    private Car parseCarObject(JSONObject car) throws java.text.ParseException {
         JSONObject carObject = (JSONObject) car.get("car");
         String date = (String) carObject.get("date");
         String brandName = (String) carObject.get("brandName");
-        String price = (String) carObject.get("price");
-        return new Car(date, brandName, price);
+        int price = ((Long)(carObject.get("price"))).intValue();
+        return new Car(Utils.convertStringToDate(date), brandName, price);
     }
 
 }
